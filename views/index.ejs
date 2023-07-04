@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
+    <title>Sobre Nós</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <a class="logo-link" href="/"><img class="logo" src="/images/logo-PI-black.svg" alt="logo-site"></a>
+            <div class="nav">
+                <a class="nav-link" href="/produtos">Produtos</a>
+                <a class="nav-link" href="/ranking">Ranking</a>
+            </div>
+            <div class="dropdown">
+                <img class="perfil-img" src="./images/perfil-black.svg" alt="ícone de perfil"></a>
+                <div class="dropdown-content">
+                    <%if (status == "LoggedIn"){%>
+                        <a href="/logout">Logout</a>
+                    <%}else{%>
+                        <a href="/login">Login</a>
+                        <a href="/cadastro">Cadastro</a>
+                    <%}%>
+                </div>
+            </div>
+        </header>
+        <section class="main">
+            <h1 class="sobre-nos-titulo">Sobre Nós</h1>
+            <div class="empresa">
+                <img class="logo-empresa-img" src="./images/logo-empresa.svg" alt="logo-empresa">
+                <h3 class="sobre-nos-texto">
+                    A SafeSavings é uma empresa de e-commerce que se dedica à venda de eletrodomésticos sustentáveis,
+                    com foco na eficiência energética. Ela oferece aos clientes benefícios como cashback, pontos e
+                    descontos, com base na eficiência energética dos produtos adquiridos. Além disso, a empresa busca
+                    incentivar práticas de consumo consciente, promovendo a adoção de produtos sustentáveis. Seu
+                    objetivo é contribuir para a preservação do meio ambiente e estimular a conscientização sobre a
+                    importância da eficiência energética na redução do consumo de energia e minimização do impacto
+                    ambiental.
+                </h3>
+            </div>
+            <div class="integrantes">
+                <img class="integrantes-foto" src="./images/foto-perfil-iago.jpeg" alt="foto Iago">
+                <h3 class="integrantes-texto">Iago, um estudante de programação dedicado e entusiasta que está atuando como desenvolvedor frontend no projeto SafeSavings. Como desenvolvedor frontend, Iago é responsável por criar a parte visual e interativa do site SafeSavings, ele utiliza suas habilidades em HTML e CSS para desenvolver interfaces amigáveis, intuitivas e responsivas, garantindo uma experiência de usuário agradável.</h3>
+            </div>
+            <div class="integrantes integrantes2">
+                <h3 class="integrantes-texto">Enzo é um profissional versátil e crucial no projeto SafeSavings, atuando como designer de sistema, arquiteto e desenvolvedor backend. Sua ampla experiência e habilidades técnicas permitem que ele contribua em várias áreas do projeto. Ele cria a arquitetura do site e trabalha em estreita colaboração com a equipe para entender os requisitos do sistema. Além disso, como desenvolvedor backend, utiliza JavaScript para implementar a lógica do site e garantir uma comunicação eficiente com o frontend e o banco de dados.</h3>
+                <img class="integrantes-foto" src="./images/foto-perfil-enzo.jpg" alt="foto Enzo">
+            </div>
+            <div class="integrantes">
+                <img class="integrantes-foto" src="./images/foto-perfil-pedro.jpg" alt="foto Pedro">
+                <h3 class="integrantes-texto">Pedro é um membro multifuncional no projeto SafeSavings, atuando como designer, desenvolvedor backend e responsável pela documentação de software. Ele traz criatividade para a interface, implementa a lógica do aplicativo e garante a funcionalidade correta. Além disso, ele cria documentações para ajudar a equipe a entender e utilizar o software. Pedro é colaborativo, eficiente e um membro valioso da equipe.</h3>
+            </div>
+            <footer class="footer">
+                <h3 class="footer-texto">Todos os direitos reservados</h3>
+            </footer>
+        </section>
+    </div>
+</body>
+
+</html>

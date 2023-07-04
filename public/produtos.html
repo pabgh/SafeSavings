@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/produtos.css">
+    <title>Produtos</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <a class="logo-link" href="/"><img class="logo" src="../images/logo-PI-white.svg" alt="logo-site"></a>
+            <div class="nav">
+                <a class="nav-link" href="#">Produtos</a>
+                <a class="nav-link" href="../ranking/ranking.html">Ranking</a>
+            </div>
+            <div class="dropdown">
+                <img src="../images/perfil-white.svg" />
+                <div class="dropdown-content">
+                    <a href="/login">Login</a>
+                    <a href="/cadastro">Cadastre-se</a>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="main-direcionamento">
+                <div class="direcionamento">
+                    <h1 class="frase-direcionamento">Descubra tudo sobre nós, SafeSavings.</h1>
+                    <a href="">Sobre Nós</a>
+                </div>
+                <div class="img-direcionamento">
+                    <img src="./images/logo-empresa.svg" alt="logo SafeSavings">
+                </div>
+            </div>
+            <div class="filtros">
+                <h2 class="titulo-filtros">Filtros</h2>
+                <h4 class="tipo-filtros">Categoria</h4>
+                <form class="form-filtros" action="">
+                    <div class="categoria">
+                        <input type="checkbox" name="aquecedores" id="aquecedores">
+                        <label for="aquecedores">Aquecedores</label>
+                        <br>
+                        <input type="checkbox" name="fogao" id="fogao">
+                        <label for="fogao">Fogão</label>
+                        <br>
+                        <input type="checkbox" name="microondas" id="microondas">
+                        <label for="microondas">Micro-ondas</label>
+                        <br>
+                        <input type="checkbox" name="lampadas" id="lampadas">
+                        <label for="lampadas">Lâmpadas</label>
+                        <br>
+                        <input type="checkbox" name="lavaESseca" id="lavaESeca">
+                        <label for="lavaESeca">Lava e Seca</label>
+                        <br>
+                        <input type="checkbox" name="Ventilador" id="Ventilador">
+                        <label for="Ventilador">Ventilador</label>
+                        <br>
+                        <input type="checkbox" name="televisores" id="televisores">
+                        <label for="televisores">Televisores</label>
+                        <br>
+                        <input type="checkbox" name="geladeiras" id="geladeiras">
+                        <label for="geladeiras">Geladeiras</label>
+                    </div>
+                </form>
+                <h4 class="tipo-filtros">Eficiência energética</h4>
+                <form class="form-filtros" action="">
+                    <input type="radio" name="categoriaA" id="categoriaA">
+                    <label for="categoriaA">A</label>
+                    <br>
+                    <input type="radio" name="categoriaB" id="categoriaB">
+                    <label for="categoriaB">B</label>
+                    <br>
+                    <input type="radio" name="categoriaC" id="categoriaC">
+                    <label for="categoriaC">C</label>
+                    <br>
+                    <input class="btn-filtros" type="submit" value="Aplicar filtros">
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

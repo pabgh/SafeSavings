@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/ranking.css">
+    <title>Ranking</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <a class="logo-link" href="/"><img class="logo" src="../images/logo-PI-white.svg" alt="logo-site"></a>
+            <div class="nav">
+                <a class="nav-link" href="/produtos">Produtos</a>
+                <a class="nav-link" href="/ranking">Ranking</a>
+            </div>
+            <div class="dropdown">
+                <img src="../images/perfil-white.svg" />
+                <div class="dropdown-content">
+                    <a href="/login">Login</a>
+                    <a href="/cadastro">Cadastre-se</a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main-ranking">
+                <h1>Ranking - Top 10</h1>
+                <p>Usuários que mais ajudaram a si mesmo e o meio ambiente </p>
+                <div class="ranking">
+                    <%
+                        let counter = 1
+                        results.forEach( itens=> { 
+                    %>
+                        
+                        <ul class="usuarios">
+                            <li><%=counter%> - </li>
+                            <li><%=itens.user%></li>
+                            <li><%=itens.EE_rate.toFixed(1)%></li>
+                        </ul>
+                        <% 
+                        counter = counter +1})%>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-ranking">
+                <p>Todos os direitos reservados</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

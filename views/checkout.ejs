@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css" type="text/css">
+    <title>Checkout</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <a class="logo-link" href="/"><img class="logo" src="/images/logo-PI-black.svg" alt="logo-site"></a>
+            <div class="dropdown">
+                <img class="perfil-img" src="./images/perfil-black.svg" alt="ícone de perfil"></a>
+                <div class="dropdown-content">
+                    <%if (status == "LoggedIn"){%>
+                        <a href="/logout">Logout</a>
+                    <%}else{%>
+                        <a href="/login">Login</a>
+                        <a href="/cadastro">Cadastro</a>
+                    <%}%>
+                </div>
+            </div>
+        </header>
+        <section class="main">
+            <br>
+            <div>
+                <a href="/produtos"><img style="width: 90px; margin-left: 10px;" src="./images/icon-e-btn.svg"
+                    alt="ícone de voltar"></a>
+            </div>
+            
+            <div class="checkout">
+                <div class="checkout_text">
+                    <p>&emsp;&emsp; Como funciona? É simples! Quanto mais energicamente eficiente for um aparelho, maior será o desconto que você receberá em forma de cashbacks. Isso mesmo, ao escolher um produto com classificação energética alta, você economiza duas vezes: na conta de energia e no bolso.</p>
+                    <br>
+                    <p>&emsp;&emsp; E não para por aí! Os cashbacks que você acumula podem ser usados como crédito para descontos em futuras compras. Assim, você aproveita os benefícios da economia de energia e ainda economiza financeiramente.</p>
+                    <br>
+                    <p>&emsp;&emsp; Faça parte do movimento SafeSaving e junte-se a nós na busca por um consumo consciente e econômico. Além de economizar, você estará contribuindo para a preservação do meio ambiente.</p>
+                </div>
+
+            <div id="checkout_box">
+                <h1 style="color: black; text-align: center; font-weight: bolder; font-size:xx-large; margin-top: 10px;"> Meu carrinho</h1>
+                
+                <table class="table">
+
+                    <% 
+                    if(checkout_cart.length > 0)
+                    {
+                        let total = 0;
+                        let total_desconto = 0;
+                        let total_final = 0;
+
+                        checkout_cart.forEach(item => {
+                    %>
+                    <tr>
+                        <td id="item_img"><img style="height: auto; width: 70px;" border="2" src="./products/<%=item.product_category%>.png"/></td>
+                        <td id="item_name"><%= item.product_name %></td>
+                        <td id="item_qnt">Qnt:<%= item.quantity %></td>
+                        <td id="item_price">R$<%= item.price %></td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td colspan="3" style="padding-left: 10px;" aling="right"><b>Desconto:</b></td>
+                        <tr><td colspan="3" style="padding-left: 10px;">R$<%= item.product_desconto.toFixed(2)  %></td></tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <%
+                            total_desconto = total_desconto + item.product_desconto; 
+                            total += parseFloat(item.quantity) * parseFloat(item.price);
+                            total_final = total - total_desconto;
+                        })
+                    %>
+                    <tr>
+                        <td colspan="3" style="padding-left: 10px;" aling="right"><b>Subtotal</b></td>
+                        <td id="valor_total">R$<%= total %></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="padding-left: 10px;" aling="right"><b id="resposta_js">Descontos</b></td>
+                        <td id="resposta_js_valor">R$<%= total_desconto %></td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <tr><td style="padding-left:10px;"><img src="./images/linha.svg" style="height: 40px;"></td></tr>
+                    
+                    <tr>
+                        <td colspan="3" style="padding-left: 10px;" aling="right"><h3>Total</h3></td>
+                        <td><h3 id="valor_total_final" >R$<%= total_final %></h3></td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <%
+                    }
+                    else
+                    {
+                    %>
+
+                    <tr>
+                        <td id="empty_cart">Carrinho vazio!</td>
+                    </tr>
+
+                    <%
+                    }
+                    %>
+                </table>
+                <div id="comprar_container"><button id="btn_comprar" onclick="window.location.href = '/buy';">Comprar</button></div>
+
+            
+            </div>
+
+            <div class="checkout_options">
+                <div class="desconto_options">
+                <h2 style="text-align: center; margin-top: 10px;">Opções</h2>
+                <tr><td style="padding-left:10px;"><img src="./images/linha.svg" style="height: 40px;"></td></tr>
+                <h3>Opções de desconto:</h3><br>
+                <label class="desconto_option"><input type="radio" name="desconto_option" value="desconto" checked><b>  Desconto - </b> Você receberá um desconto em sua compra</label>
+                <br>
+                <label class="desconto_option"><input type="radio" name="desconto_option" value="cashback"><b>  Cashback - </b>Você receberá um cashback na plataforma para gastar em futuras compras</label>
+                <br>
+                <label class="desconto_option"><input type="radio" name="desconto_option" value="doar"><b>  Doar o desconto - </b>Doe o valor do desconto para instituições beneficentes que apoiam causas sustentaveis</label>
+                </div>
+            </div>
+        </div>
+        <% 
+        
+        %>
+        </section>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./js/checkout.js"></script>
+</html>

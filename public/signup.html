@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/signup.css">
+    <title>Signup</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="/"><img class="logo"src="./images/logo-PI-white.svg" alt="logo-site"></a>
+            <div class="nav">
+                <a class="nav-link" href="/produtos">Produtos</a>
+                <a class="nav-link" href="">Ranking</a>
+            </div>
+            <img class='quadrado'src="./images/quadrado-green.svg" alt="logo">
+        </header>
+        <section class="main">
+            <div class="section-popup">
+                <a class="link-icon-back" href="/"><img class="icon-back" src="../images/icon-e-btn.svg"
+                    alt="ícone de voltar"></a>
+                <div class="popup-success" id="success"></div>
+                <div class="popup-error" id="error"></div>
+            </div>
+            <div class="box">
+                <div class="box-head">
+                    <img class="logo2" src="./images/logo-sem-escrito.svg" alt="logo sem escrito">
+                </div>
+                <form onsubmit="return false;" id="form" >
+                <div class="box-body">
+                    <label class="box-label" for="login">Login</label>
+                    <input class="box-input login" id="login" type="text" placeholder="Digite seu login">
+
+                    <label class="box-label" for="password">Senha</label>
+                    <input class="box-input senha" id="password" type="password" placeholder="Digite sua senha">
+
+                    <label class="box-label" for="password">Confirmar senha</label>
+                    <input class="box-input senha" id="confirm_password" type="password" placeholder="Digite sua senha novamente">
+
+                    <input class="box-btn" type="submit" value="Cadastrar">
+                    <a class="box-link" href="/login">Tem conta? Faça seu login!</a>
+                </div>
+            </form>
+            </div>
+        </section>
+    </div>
+    <script src="js/register.js"></script>
+</body>
+
+</html>
